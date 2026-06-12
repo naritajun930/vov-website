@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voices of Vision | 名古屋ゴスペルクワイア</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600;1,700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* グレージュ基調（白すぎない・会社っぽくない） */
+  --bg:#E9E3D9;          /* メイン背景：グレージュ */
+  --bg2:#E2DBCF;         /* 少し濃いグレージュ */
+  --bg3:#D6CDBE;         /* セクション区切り */
+  --paper:#F2EEE6;       /* カード背景：少し明るく */
+
+  /* バーガンディ（ボルドー）＝VOVのアイデンティティ */
+  --burg:#6D2B3D;
+  --burg-d:#4E1C2A;
+  --burg-l:#8A3B50;
+
+  /* ゴールド＝ゴスペルの輝き（テラコッタから変更） */
+  --gold:#B8923A;
+  --gold-l:#D4B061;
+  --gold-pale:#E8D9B0;
+
+  /* 黒＝ブラックゴスペルの象徴（引き締め役・量は控えめ） */
+  --ink:#1C1410;
+  --ink-m:#473A30;
+  --ink-l:#8A7B6C;
+
+  --white:#FBF9F5;       /* 白＝信仰の強さの象徴 */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:400;
+  font-size:15px;       /* ベースを大きめに＝視認性重視 */
+  line-height:1.9;
+}
+
+/* ============ NAV ============ */
+nav{
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 48px;
+  background:rgba(233,227,217,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--bg3);
+}
+.logo{text-decoration:none;display:flex;flex-direction:column}
+.logo-m{
+  font-family:'Lora',serif;font-size:21px;font-weight:700;
+  color:var(--burg);letter-spacing:.02em;line-height:1;
+}
+.logo-s{
+  font-size:10px;letter-spacing:.3em;color:var(--ink-l);
+  margin-top:4px;text-transform:uppercase;font-weight:500;
+}
+nav ul{display:flex;gap:26px;list-style:none;align-items:center}
+nav ul a{
+  color:var(--ink-m);text-decoration:none;
+  font-size:14px;font-weight:500;letter-spacing:.04em;
+  transition:color .25s;
+}
+nav ul a:hover{color:var(--burg)}
+.nav-cta{
+  background:var(--burg);color:var(--white)!important;
+  padding:11px 26px;font-size:13px!important;font-weight:700!important;
+  letter-spacing:.1em!important;
+  transition:background .25s!important;
+}
+.nav-cta:hover{background:var(--burg-d)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  min-height:calc(100vh - 67px);
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  overflow:hidden;
+}
+.hero-l{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:72px 56px 90px;
+  position:relative;
+}
+/* 黒の縦ライン＝引き締め（ブラックゴスペルの象徴・控えめに） */
+.hero-l::before{
+  content:'';position:absolute;left:0;top:15%;bottom:15%;
+  width:4px;background:var(--ink);
+}
+.h-eye{
+  display:flex;align-items:center;gap:12px;margin-bottom:34px;
+}
+.h-eye-bar{width:36px;height:2px;background:var(--gold)}
+.h-eye-t{
+  font-size:11px;letter-spacing:.38em;color:var(--gold);
+  font-weight:700;text-transform:uppercase;
+}
+h1{
+  font-family:'Lora',serif;
+  font-size:clamp(44px,4.6vw,62px);
+  font-weight:700;line-height:1.22;
+  color:var(--ink);margin-bottom:16px;
+}
+h1 em{font-style:italic;color:var(--burg)}
+.h-sub{
+  font-size:14px;letter-spacing:.32em;color:var(--ink-l);
+  margin-bottom:34px;font-weight:500;
+}
+.h-desc{
+  font-size:16px;line-height:2.15;color:var(--ink-m);
+  max-width:440px;margin-bottom:48px;
+}
+.cta-row{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.btn-fill{
+  background:var(--burg);color:var(--white);
+  padding:17px 40px;
+  font-size:14.5px;font-weight:700;letter-spacing:.08em;
+  text-decoration:none;
+  box-shadow:0 6px 24px rgba(109,43,61,.28);
+  transition:all .25s;
+  position:relative;
+}
+/* ゴールドのアンダーアクセント */
+.btn-fill::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;
+  height:3px;background:var(--gold);
+}
+.btn-fill:hover{background:var(--burg-d);transform:translateY(-2px)}
+.btn-line{
+  color:var(--ink-m);font-size:14.5px;text-decoration:none;
+  display:flex;align-items:center;gap:8px;font-weight:600;
+  letter-spacing:.04em;
+  border-bottom:2px solid var(--gold);padding-bottom:3px;
+  transition:color .25s;
+}
+.btn-line:hover{color:var(--burg)}
+.h-since{
+  display:flex;align-items:center;gap:18px;
+  margin-top:54px;padding-top:38px;
+  border-top:1px solid var(--bg3);
+}
+.h-since-n{
+  font-family:'Lora',serif;font-size:52px;font-weight:700;
+  color:var(--burg);line-height:1;
+}
+.h-since-t{
+  font-size:11px;letter-spacing:.24em;color:var(--ink-l);
+  line-height:1.7;font-weight:600;text-transform:uppercase;
+}
+
+/* HERO 右：ビジュアル */
+.hero-r{
+  position:relative;background:var(--bg2);overflow:hidden;
+}
+.hr-photo-main{
+  position:absolute;top:9%;left:9%;width:56%;aspect-ratio:3/4;
+  background:linear-gradient(155deg,#C8B49C 0%,#AE9678 50%,#94785C 100%);
+  box-shadow:0 24px 64px rgba(28,20,16,.22);
+  display:flex;align-items:center;justify-content:center;
+}
+.hr-photo-sub{
+  position:absolute;bottom:11%;right:7%;width:40%;aspect-ratio:4/3;
+  background:linear-gradient(155deg,#BCA688,#A08868);
+  box-shadow:0 16px 44px rgba(28,20,16,.18);
+  display:flex;align-items:center;justify-content:center;
+}
+.ph-lbl{
+  font-size:10px;letter-spacing:.24em;color:rgba(28,20,16,.35);
+  font-weight:700;text-transform:uppercase;
+}
+/* ゴールドの幾何学アクセント */
+.hr-gold-frame{
+  position:absolute;top:6%;left:6%;width:56%;aspect-ratio:3/4;
+  border:2px solid var(--gold);
+  pointer-events:none;
+}
+.hr-badge{
+  position:absolute;top:12%;right:8%;
+  background:var(--ink);color:var(--gold-l);
+  padding:18px 22px;text-align:center;
+  box-shadow:0 10px 32px rgba(28,20,16,.3);
+}
+.hr-badge-n{
+  font-family:'Lora',serif;font-size:36px;font-weight:700;
+  line-height:1;display:block;
+}
+.hr-badge-t{
+  font-size:9px;letter-spacing:.24em;margin-top:5px;display:block;
+  color:rgba(212,176,97,.75);text-transform:uppercase;font-weight:600;
+}
+.hr-quote{
+  position:absolute;bottom:6%;left:5%;right:42%;
+  background:rgba(251,249,245,.95);
+  padding:18px 22px;
+  border-left:4px solid var(--burg);
+  box-shadow:0 8px 28px rgba(28,20,16,.12);
+}
+.hr-quote p{
+  font-family:'Lora',serif;font-size:13px;font-style:italic;
+  color:var(--ink-m);line-height:1.8;margin-bottom:6px;
+}
+.hr-quote span{
+  font-size:10px;letter-spacing:.18em;color:var(--ink-l);
+  font-weight:700;text-transform:uppercase;
+}
+
+/* ============ NEWS BAND ============ */
+.nb{
+  background:var(--burg);
+  padding:13px 0;overflow:hidden;display:flex;align-items:center;
+  border-top:3px solid var(--gold);
+}
+.nb-tag{
+  background:var(--gold);color:var(--ink);
+  font-size:10.5px;font-weight:700;letter-spacing:.2em;
+  padding:5px 18px;flex-shrink:0;text-transform:uppercase;
+}
+.nb-track{
+  display:flex;gap:56px;padding-left:40px;white-space:nowrap;
+  animation:tick 30s linear infinite;
+}
+.nb-item{
+  font-size:13.5px;color:rgba(251,249,245,.88);
+  display:flex;align-items:center;gap:14px;letter-spacing:.03em;
+}
+.nb-date{
+  color:var(--gold-l);font-size:11.5px;font-weight:700;letter-spacing:.12em;
+}
+.nb-sep{color:rgba(251,249,245,.25)}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ SECTION 共通 ============ */
+section{padding:96px 48px}
+.inner{max-width:1100px;margin:0 auto}
+.s-eye{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.s-eye-bar{width:30px;height:2px;background:var(--gold)}
+.s-eye-t{
+  font-size:11px;letter-spacing:.34em;color:var(--gold);
+  font-weight:700;text-transform:uppercase;
+}
+h2{
+  font-family:'Lora',serif;
+  font-size:clamp(32px,3.6vw,42px);
+  font-weight:700;line-height:1.3;
+  color:var(--ink);margin-bottom:20px;
+}
+h2 em{font-style:italic;color:var(--burg)}
+.s-body{font-size:15.5px;line-height:2.1;color:var(--ink-m)}
+
+/* ============ ABOUT ============ */
+.about{background:var(--paper)}
+.about-g{
+  display:grid;grid-template-columns:1fr 1.1fr;
+  gap:72px;align-items:center;
+}
+.ai-block{position:relative}
+.ai-main{
+  aspect-ratio:4/5;
+  background:linear-gradient(150deg,#D2C0A8,#B49C80);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 18px 56px rgba(28,20,16,.14);
+}
+.ai-frame{
+  position:absolute;top:-14px;left:-14px;
+  width:calc(100% - 28px);height:calc(100% - 28px);
+  border:2px solid var(--gold);
+  pointer-events:none;z-index:1;
+}
+.ai-badge{
+  position:absolute;bottom:-18px;right:-18px;
+  background:var(--burg);color:var(--white);
+  padding:18px 24px;text-align:center;
+  box-shadow:0 10px 32px rgba(109,43,61,.32);
+  z-index:2;
+}
+.ai-badge-n{
+  font-family:'Lora',serif;font-size:36px;font-weight:700;
+  line-height:1;display:block;
+}
+.ai-badge-t{
+  font-size:9.5px;letter-spacing:.24em;margin-top:5px;display:block;
+  opacity:.75;text-transform:uppercase;font-weight:600;
+}
+.pillars{
+  display:flex;border:2px solid var(--bg3);
+  margin:32px 0;background:var(--white);
+}
+.pl{
+  flex:1;padding:24px 18px;text-align:center;
+  border-right:2px solid var(--bg3);
+  transition:background .25s;
+}
+.pl:last-child{border-right:none}
+.pl:hover{background:var(--bg)}
+.pl-n{
+  font-family:'Lora',serif;font-size:15px;font-weight:700;
+  color:var(--burg);display:block;margin-bottom:6px;
+}
+.pl-d{font-size:12.5px;color:var(--ink-l);line-height:1.7}
+.ab-note{
+  font-size:14px;color:var(--ink-m);
+  background:var(--bg);padding:18px 22px;
+  border-left:4px solid var(--gold);line-height:2;
+}
+
+/* ============ SCHEDULE ============ */
+.sched{background:var(--bg)}
+.sched-hd{text-align:center;margin-bottom:56px}
+.sched-g{
+  display:grid;grid-template-columns:1fr 2fr;gap:44px;align-items:start;
+}
+.reh{
+  background:var(--white);padding:34px 30px;
+  border-top:4px solid var(--burg);
+  box-shadow:0 6px 28px rgba(28,20,16,.08);
+}
+.reh-lbl{
+  font-size:10px;letter-spacing:.32em;color:var(--gold);
+  font-weight:700;margin-bottom:12px;text-transform:uppercase;
+}
+.reh-day{
+  font-family:'Lora',serif;font-size:58px;font-weight:700;
+  color:var(--burg);line-height:1;
+}
+.reh-sub{
+  font-size:12px;letter-spacing:.22em;color:var(--ink-l);
+  margin:6px 0 22px;font-weight:600;
+}
+.reh-info{
+  font-size:14px;line-height:2.3;color:var(--ink-m);
+  border-top:1px solid var(--bg3);padding-top:20px;
+}
+.ri{display:flex;gap:8px}
+.ri-k{color:var(--burg);font-weight:700;min-width:38px}
+.reh-btn{
+  display:block;background:var(--burg);color:var(--white);
+  text-align:center;padding:15px;margin-top:24px;
+  font-size:14px;font-weight:700;letter-spacing:.1em;text-decoration:none;
+  transition:background .25s;
+  position:relative;
+}
+.reh-btn::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;
+  height:3px;background:var(--gold);
+}
+.reh-btn:hover{background:var(--burg-d)}
+.evts{display:flex;flex-direction:column;gap:12px}
+.evt{
+  background:var(--white);padding:24px 28px;
+  display:grid;grid-template-columns:72px 1fr auto;
+  gap:20px;align-items:center;
+  border-left:4px solid transparent;
+  box-shadow:0 3px 14px rgba(28,20,16,.06);
+  transition:all .28s;cursor:pointer;
+}
+.evt:hover{
+  border-left-color:var(--gold);
+  box-shadow:0 6px 26px rgba(28,20,16,.12);
+  transform:translateX(4px);
+}
+.ev-dt{text-align:center}
+.ev-mo{
+  font-size:10px;letter-spacing:.2em;color:var(--gold);
+  font-weight:700;text-transform:uppercase;
+}
+.ev-d{
+  font-family:'Lora',serif;font-size:34px;font-weight:700;
+  color:var(--ink);line-height:1;
+}
+.ev-dow{font-size:11px;color:var(--ink-l);font-weight:500}
+.ev-info h4{
+  font-size:16.5px;font-weight:700;color:var(--ink);margin-bottom:5px;
+}
+.ev-info p{font-size:13px;color:var(--ink-l);line-height:1.7}
+.ev-tag{
+  font-size:10px;font-weight:700;letter-spacing:.14em;
+  padding:5px 14px;white-space:nowrap;text-transform:uppercase;
+}
+.tg-c{background:var(--burg);color:var(--white)}
+.tg-e{background:var(--gold);color:var(--ink)}
+.tg-r{background:var(--bg2);color:var(--ink-l)}
+.sched-cal-note{
+  margin-top:24px;text-align:center;
+  font-size:13px;color:var(--ink-l);
+}
+
+/* ============ GALLERY + CONCERT (統合) ============ */
+.gal{background:var(--paper)}
+.gal-hd{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:44px;flex-wrap:wrap;gap:16px;
+}
+.gal-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr;
+  grid-template-rows:250px 250px;gap:10px;
+}
+.gc{
+  position:relative;overflow:hidden;cursor:pointer;
+}
+.gc:first-child{grid-row:1/3}
+.gc-in{
+  width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  transition:transform .5s ease;
+}
+.gc:hover .gc-in{transform:scale(1.05)}
+.gc:nth-child(1) .gc-in{background:linear-gradient(150deg,#C8B098,#A88C70)}
+.gc:nth-child(2) .gc-in{background:linear-gradient(150deg,#BCA890,#9C8468)}
+.gc:nth-child(3) .gc-in{background:linear-gradient(150deg,#C4AC94,#A48868)}
+.gc:nth-child(4) .gc-in{background:linear-gradient(150deg,#B8A088,#987C60)}
+.gc:nth-child(5) .gc-in{background:linear-gradient(150deg,#CCB49C,#AC9074)}
+.gc-ov{
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(28,20,16,.65) 0%,transparent 55%);
+  opacity:0;transition:opacity .3s;
+  display:flex;align-items:flex-end;padding:18px 20px;
+}
+.gc:hover .gc-ov{opacity:1}
+.gc-ov-t{
+  font-size:13px;color:var(--white);letter-spacing:.08em;font-weight:700;
+}
+/* コンサート告知カード（ギャラリー内に統合） */
+.concert-banner{
+  margin-top:48px;
+  background:var(--ink);
+  display:grid;grid-template-columns:auto 1fr auto;
+  gap:32px;align-items:center;
+  padding:32px 40px;
+  border-left:5px solid var(--gold);
+}
+.cb-date{text-align:center;color:var(--gold-l)}
+.cb-mo{font-size:11px;letter-spacing:.22em;font-weight:700;text-transform:uppercase}
+.cb-d{font-family:'Lora',serif;font-size:46px;font-weight:700;line-height:1}
+.cb-info h3{
+  font-family:'Lora',serif;font-size:22px;font-weight:700;
+  color:var(--white);margin-bottom:8px;
+}
+.cb-info p{font-size:13.5px;color:rgba(251,249,245,.6);line-height:1.8}
+.cb-btn{
+  background:var(--gold);color:var(--ink);
+  padding:14px 32px;font-size:13.5px;font-weight:700;
+  letter-spacing:.08em;text-decoration:none;white-space:nowrap;
+  transition:background .25s;
+}
+.cb-btn:hover{background:var(--gold-l)}
+
+/* ============ HISTORY（年表） ============ */
+.hist{background:var(--bg)}
+.hist-hd{text-align:center;margin-bottom:56px}
+.timeline{
+  position:relative;max-width:760px;margin:0 auto;
+  padding-left:36px;
+}
+.timeline::before{
+  content:'';position:absolute;left:8px;top:6px;bottom:6px;
+  width:2px;background:var(--bg3);
+}
+.tl-item{
+  position:relative;padding-bottom:34px;
+}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{
+  content:'';position:absolute;left:-34px;top:7px;
+  width:14px;height:14px;
+  background:var(--gold);
+  border:3px solid var(--bg);
+  box-shadow:0 0 0 2px var(--gold);
+}
+.tl-item.major::before{background:var(--burg);box-shadow:0 0 0 2px var(--burg)}
+.tl-year{
+  font-family:'Lora',serif;font-size:21px;font-weight:700;
+  color:var(--burg);margin-bottom:4px;
+}
+.tl-text{font-size:14.5px;color:var(--ink-m);line-height:1.9}
+.hist-more{
+  text-align:center;margin-top:48px;
+}
+
+/* ============ JOIN ============ */
+.join{background:var(--paper)}
+.join-hd{text-align:center;margin-bottom:56px}
+.join-g{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;
+}
+.steps{display:flex;flex-direction:column}
+.step{
+  display:flex;gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--bg3);align-items:flex-start;
+}
+.step:last-child{border-bottom:none}
+.st-n{
+  font-family:'Lora',serif;font-size:38px;font-weight:700;
+  color:var(--gold);line-height:1;flex-shrink:0;width:48px;
+}
+.st-b h4{
+  font-size:16.5px;font-weight:700;color:var(--ink);margin-bottom:7px;
+}
+.st-b p{font-size:14px;color:var(--ink-m);line-height:1.95}
+.faq{
+  background:var(--white);padding:38px 34px;
+  border-top:4px solid var(--gold);
+  box-shadow:0 6px 28px rgba(28,20,16,.08);
+}
+.faq h3{
+  font-family:'Lora',serif;font-size:23px;font-weight:700;
+  color:var(--ink);margin-bottom:8px;
+}
+.faq-sub{font-size:14px;color:var(--ink-l);margin-bottom:26px;line-height:1.85}
+.faq-list{display:flex;flex-direction:column;margin-bottom:32px}
+.fi{padding:15px 0;border-bottom:1px solid var(--bg3)}
+.fi:last-child{border-bottom:none}
+.fq{font-size:14.5px;font-weight:700;color:var(--burg);margin-bottom:5px}
+.fa{font-size:14px;color:var(--ink-m);line-height:1.85}
+.faq-btn{
+  display:block;background:var(--burg);color:var(--white);
+  text-align:center;padding:16px;
+  font-size:14px;font-weight:700;letter-spacing:.1em;text-decoration:none;
+  position:relative;transition:background .25s;
+}
+.faq-btn::after{
+  content:'';position:absolute;left:0;right:0;bottom:0;
+  height:3px;background:var(--gold);
+}
+.faq-btn:hover{background:var(--burg-d)}
+
+/* ============ NEWS / 投稿 ============ */
+.posts{background:var(--bg)}
+.posts-hd{
+  display:flex;align-items:flex-end;justify-content:space-between;
+  margin-bottom:44px;flex-wrap:wrap;gap:16px;
+}
+.posts-g{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{
+  background:var(--white);
+  box-shadow:0 4px 20px rgba(28,20,16,.07);
+  transition:all .28s;cursor:pointer;
+  overflow:hidden;
+}
+.post:hover{
+  box-shadow:0 10px 36px rgba(28,20,16,.14);
+  transform:translateY(-4px);
+}
+.post-img{
+  aspect-ratio:16/10;
+  display:flex;align-items:center;justify-content:center;
+}
+.post:nth-child(1) .post-img{background:linear-gradient(150deg,#C4AC90,#A08468)}
+.post:nth-child(2) .post-img{background:linear-gradient(150deg,#BCA48C,#9C8064)}
+.post:nth-child(3) .post-img{background:linear-gradient(150deg,#CCB498,#AC9070)}
+.post-body{padding:22px 24px 26px}
+.post-date{
+  font-size:11px;letter-spacing:.16em;color:var(--gold);
+  font-weight:700;margin-bottom:8px;display:block;
+}
+.post-title{
+  font-size:16px;font-weight:700;color:var(--ink);
+  line-height:1.6;margin-bottom:8px;
+}
+.post-ex{font-size:13px;color:var(--ink-l);line-height:1.8}
+
+/* ============ FOOTER ============ */
+footer{
+  background:var(--ink);
+  padding:64px 48px 30px;
+  border-top:4px solid var(--gold);
+}
+.ft-g{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;
+  gap:44px;max-width:1100px;margin:0 auto 48px;
+}
+.ft-brand{
+  font-family:'Lora',serif;font-size:21px;font-weight:700;
+  color:var(--gold-l);margin-bottom:12px;
+}
+.ft-tag{
+  font-size:13px;color:rgba(251,249,245,.45);
+  line-height:1.9;margin-bottom:24px;
+}
+.ft-sns{display:flex;gap:10px}
+.sn{
+  width:36px;height:36px;
+  border:1px solid rgba(212,176,97,.3);
+  display:flex;align-items:center;justify-content:center;
+  font-size:13px;color:rgba(212,176,97,.7);text-decoration:none;
+  transition:all .25s;
+}
+.sn:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.ft-col h5{
+  font-size:10.5px;letter-spacing:.28em;color:var(--gold);
+  font-weight:700;margin-bottom:16px;text-transform:uppercase;
+}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.ft-col a{
+  font-size:13.5px;color:rgba(251,249,245,.5);
+  text-decoration:none;transition:color .22s;
+}
+.ft-col a:hover{color:var(--gold-l)}
+.ft-bot{
+  display:flex;justify-content:space-between;
+  border-top:1px solid rgba(212,176,97,.15);
+  padding-top:24px;max-width:1100px;margin:0 auto;
+}
+.ft-c{font-size:11px;color:rgba(251,249,245,.28);letter-spacing:.05em}
+
+/* ============ ANIMATION ============ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:860px){
+  nav{padding:14px 24px}
+  nav ul{gap:16px}
+  nav ul li:not(:last-child){display:none}
+  .hero{grid-template-columns:1fr}
+  .hero-r{min-height:380px}
+  .hero-l{padding:60px 28px}
+  section{padding:72px 24px}
+  .about-g,.join-g,.sched-g{grid-template-columns:1fr;gap:44px}
+  .gal-grid{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,180px)}
+  .gc:first-child{grid-row:1;grid-column:1/3}
+  .posts-g{grid-template-columns:1fr}
+  .concert-banner{grid-template-columns:1fr;text-align:center;gap:20px}
+  .ft-g{grid-template-columns:1fr 1fr;gap:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<nav>
+  <a href="#" class="logo">
+    <span class="logo-m">Voices of Vision</span>
+    <span class="logo-s">Nagoya Gospel Choir</span>
+  </a>
+  <ul>
+    <li><a href="#about">VOVについて</a></li>
+    <li><a href="#schedule">スケジュール</a></li>
+    <li><a href="#gallery">ギャラリー</a></li>
+    <li><a href="#history">歴史</a></li>
+    <li><a href="#posts">活動レポート</a></li>
+    <li><a href="#join" class="nav-cta">見学を申し込む</a></li>
+  </ul>
+</nav>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="hero-l">
+    <div class="h-eye">
+      <div class="h-eye-bar"></div>
+      <span class="h-eye-t">Nagoya Gospel Choir · Since 1999</span>
+    </div>
+    <h1>歌で、<br><em>心の垣根を</em><br>越える。</h1>
+    <p class="h-sub">VOICES OF VISION</p>
+    <p class="h-desc">名古屋から生まれ、25年間歌い続けてきたゴスペルクワイア。オーディションなし、楽譜なし。歌が好きなら、誰でも歓迎です。</p>
+    <div class="cta-row">
+      <a href="#join" class="btn-fill">見学を申し込む</a>
+      <a href="#about" class="btn-line">VOVのことを知る →</a>
+    </div>
+    <div class="h-since">
+      <span class="h-since-n">25</span>
+      <span class="h-since-t">Years of<br>Gospel</span>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="hr-gold-frame"></div>
+    <div class="hr-photo-main"><span class="ph-lbl">Concert Photo</span></div>
+    <div class="hr-photo-sub"><span class="ph-lbl">Rehearsal</span></div>
+    <div class="hr-badge">
+      <span class="hr-badge-n">25</span>
+      <span class="hr-badge-t">Years of Gospel</span>
+    </div>
+    <div class="hr-quote">
+      <p>「オーディションなし。楽譜なし。<br>歌が好きな気持ちだけ持ってきてください。」</p>
+      <span>Voices of Vision</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ NEWS BAND ============ -->
+<div class="nb">
+  <div class="nb-tag">News</div>
+  <div class="nb-track">
+    <span class="nb-item"><span class="nb-date">2026.12.20</span><span class="nb-sep">|</span>クリスマスコンサート 開催決定！詳細はギャラリー・コンサートページへ</span>
+    <span class="nb-item"><span class="nb-date">2026.10.05</span><span class="nb-sep">|</span>秋のゴスペルフェスティバルに出演します</span>
+    <span class="nb-item"><span class="nb-date">2026.09.01</span><span class="nb-sep">|</span>新メンバー見学会 随時受付中！お気軽にどうぞ</span>
+    <span class="nb-item"><span class="nb-date">2026.12.20</span><span class="nb-sep">|</span>クリスマスコンサート 開催決定！詳細はギャラリー・コンサートページへ</span>
+    <span class="nb-item"><span class="nb-date">2026.10.05</span><span class="nb-sep">|</span>秋のゴスペルフェスティバルに出演します</span>
+    <span class="nb-item"><span class="nb-date">2026.09.01</span><span class="nb-sep">|</span>新メンバー見学会 随時受付中！お気軽にどうぞ</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <div class="inner">
+    <div class="about-g rv">
+      <div class="ai-block">
+        <div class="ai-frame"></div>
+        <div class="ai-main"><span class="ph-lbl">Photo Coming Soon</span></div>
+        <div class="ai-badge">
+          <span class="ai-badge-n">25</span>
+          <span class="ai-badge-t">Years</span>
+        </div>
+      </div>
+      <div>
+        <div class="s-eye">
+          <div class="s-eye-bar"></div>
+          <span class="s-eye-t">About VOV</span>
+        </div>
+        <h2>名古屋発の<br><em>ゴスペルクワイア</em></h2>
+        <p class="s-body">1999年、名古屋に生まれた小さなゴスペルグループ。それが今や25年以上の歴史を紡ぐ「Voices of Vision」になりました。</p>
+        <div class="pillars">
+          <div class="pl"><span class="pl-n">Music</span><span class="pl-d">歌の喜びを<br>分かち合う</span></div>
+          <div class="pl"><span class="pl-n">History</span><span class="pl-d">ゴスペルの<br>ルーツを知る</span></div>
+          <div class="pl"><span class="pl-n">Christianity</span><span class="pl-d">精神を尊重し<br>歌に込める</span></div>
+        </div>
+        <p class="ab-note">信仰の強制はありません。現在メンバーのうちクリスチャンは約2〜3割。歌が好きな方なら、どなたでも歓迎します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="sched" id="schedule">
+  <div class="inner">
+    <div class="sched-hd rv">
+      <div class="s-eye" style="justify-content:center">
+        <div class="s-eye-bar"></div>
+        <span class="s-eye-t">Schedule</span>
+        <div class="s-eye-bar"></div>
+      </div>
+      <h2>活動・<em>スケジュール</em></h2>
+    </div>
+    <div class="sched-g rv">
+      <div class="reh">
+        <div class="reh-lbl">Regular Rehearsal</div>
+        <div class="reh-day">木</div>
+        <div class="reh-sub">毎週木曜日</div>
+        <div class="reh-info">
+          <div class="ri"><span class="ri-k">時間</span><span>19:00 〜 21:00</span></div>
+          <div class="ri"><span class="ri-k">会場</span><span>在日大韓基督教会 名古屋教会 7F</span></div>
+          <div class="ri"><span class="ri-k">所在</span><span>名古屋市西区</span></div>
+          <br>
+          <span style="font-size:13px;color:var(--ink-l)">見学は事前連絡なしでもOK！<br>気軽にのぞきに来てください。</span>
+        </div>
+        <a href="#join" class="reh-btn">見学を申し込む</a>
+      </div>
+      <div class="evts">
+        <div class="evt">
+          <div class="ev-dt"><div class="ev-mo">Dec</div><div class="ev-d">20</div><div class="ev-dow">土</div></div>
+          <div class="ev-info"><h4>VOV クリスマスコンサート</h4><p>名古屋市公会堂　開演 18:00　入場無料・どなたでもご来場いただけます</p></div>
+          <span class="ev-tag tg-c">Concert</span>
+        </div>
+        <div class="evt">
+          <div class="ev-dt"><div class="ev-mo">Oct</div><div class="ev-d">05</div><div class="ev-dow">日</div></div>
+          <div class="ev-info"><h4>秋のゴスペルフェスティバル 出演</h4><p>栄・中区文化センター</p></div>
+          <span class="ev-tag tg-e">Event</span>
+        </div>
+        <div class="evt">
+          <div class="ev-dt"><div class="ev-mo">毎週</div><div class="ev-d">木</div><div class="ev-dow">曜</div></div>
+          <div class="ev-info"><h4>定期リハーサル</h4><p>見学・体験参加はいつでもOK！</p></div>
+          <span class="ev-tag tg-r">Rehearsal</span>
+        </div>
+        <p class="sched-cal-note">※ 最新のスケジュールはGoogleカレンダーでもご確認いただけます（準備中）</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY + CONCERT（統合） ============ -->
+<section class="gal" id="gallery">
+  <div class="inner">
+    <div class="gal-hd rv">
+      <div>
+        <div class="s-eye">
+          <div class="s-eye-bar"></div>
+          <span class="s-eye-t">Gallery &amp; Concert</span>
+        </div>
+        <h2>活動の<em>記録</em>とコンサート</h2>
+      </div>
+      <a href="#" class="btn-line">すべて見る →</a>
+    </div>
+    <div class="gal-grid rv">
+      <div class="gc"><div class="gc-in"><span class="ph-lbl">Concert</span></div><div class="gc-ov"><span class="gc-ov-t">クリスマスコンサート</span></div></div>
+      <div class="gc"><div class="gc-in"><span class="ph-lbl">Rehearsal</span></div><div class="gc-ov"><span class="gc-ov-t">木曜リハーサル</span></div></div>
+      <div class="gc"><div class="gc-in"><span class="ph-lbl">Event</span></div><div class="gc-ov"><span class="gc-ov-t">ゴスペルフェス</span></div></div>
+      <div class="gc"><div class="gc-in"><span class="ph-lbl">Workshop</span></div><div class="gc-ov"><span class="gc-ov-t">ワークショップ</span></div></div>
+      <div class="gc"><div class="gc-in"><span class="ph-lbl">Members</span></div><div class="gc-ov"><span class="gc-ov-t">メンバー集合</span></div></div>
+    </div>
+    <!-- 直近コンサート告知（黒×ゴールド＝引き締めセクション） -->
+    <div class="concert-banner rv">
+      <div class="cb-date">
+        <div class="cb-mo">Dec</div>
+        <div class="cb-d">20</div>
+      </div>
+      <div class="cb-info">
+        <h3>VOV クリスマスコンサート 2026</h3>
+        <p>会場：名古屋市公会堂　開演 18:00（開場 17:30）　入場無料<br>VOV最大のイベント。一年の集大成をぜひ聴きに来てください。</p>
+      </div>
+      <a href="#" class="cb-btn">詳細を見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORY（年表） ============ -->
+<section class="hist" id="history">
+  <div class="inner">
+    <div class="hist-hd rv">
+      <div class="s-eye" style="justify-content:center">
+        <div class="s-eye-bar"></div>
+        <span class="s-eye-t">History</span>
+        <div class="s-eye-bar"></div>
+      </div>
+      <h2>VOVの<em>歩み</em></h2>
+      <p class="s-body" style="max-width:520px;margin:0 auto">1999年の創設から今日まで。VOVが紡いできた歴史の概要です。</p>
+    </div>
+    <div class="timeline rv">
+      <div class="tl-item major">
+        <div class="tl-year">1999</div>
+        <p class="tl-text">名古屋でゴスペルグループ創設（前身：名古屋ゴスペルクワイヤー）</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2000</div>
+        <p class="tl-text">「Voices of Vision」に改名。本格的な活動を開始</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2002</div>
+        <p class="tl-text">活動記録（History）のアーカイブを開始</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2006</div>
+        <p class="tl-text">在日大韓基督教会 名古屋教会7Fをリハーサル会場として利用開始</p>
+      </div>
+      <div class="tl-item major">
+        <div class="tl-year">2024</div>
+        <p class="tl-text">創設25周年。四半世紀にわたり名古屋のゴスペルシーンを支え続ける</p>
+      </div>
+    </div>
+    <div class="hist-more rv">
+      <a href="#" class="btn-line">詳しい活動記録を見る（アーカイブ）→</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ JOIN ============ -->
+<section class="join" id="join">
+  <div class="inner">
+    <div class="join-hd rv">
+      <div class="s-eye" style="justify-content:center">
+        <div class="s-eye-bar"></div>
+        <span class="s-eye-t">Join Us</span>
+        <div class="s-eye-bar"></div>
+      </div>
+      <h2>一緒に<em>歌いませんか？</em></h2>
+      <p class="s-body" style="max-width:480px;margin:0 auto">オーディションも楽譜も必要ありません。<br>まずは一度、リハーサルを見に来てください。</p>
+    </div>
+    <div class="join-g rv">
+      <div class="steps">
+        <div class="step">
+          <span class="st-n">01</span>
+          <div class="st-b"><h4>リハーサルを見学する</h4><p>木曜夜のリハーサルに気軽に来てください。事前連絡なしでも大丈夫です。</p></div>
+        </div>
+        <div class="step">
+          <span class="st-n">02</span>
+          <div class="st-b"><h4>体験参加してみる</h4><p>見学後、一緒に歌いたいと思ったらそのまま体験参加できます。</p></div>
+        </div>
+        <div class="step">
+          <span class="st-n">03</span>
+          <div class="st-b"><h4>メンバーとして参加スタート</h4><p>入会手続き後、正式メンバーとして活動スタート！</p></div>
+        </div>
+      </div>
+      <div class="faq">
+        <h3>よくある質問</h3>
+        <p class="faq-sub">「私でも大丈夫？」という不安、よくわかります。</p>
+        <div class="faq-list">
+          <div class="fi"><div class="fq">Q. オーディションはありますか？</div><div class="fa">ありません。歌が好きならOKです。</div></div>
+          <div class="fi"><div class="fq">Q. 楽譜が読めませんが大丈夫？</div><div class="fa">大丈夫！音を聴いて覚えるスタイルです。</div></div>
+          <div class="fi"><div class="fq">Q. キリスト教徒でないとダメ？</div><div class="fa">信仰の強制はありません。メンバーの多くは未信者です。</div></div>
+          <div class="fi"><div class="fq">Q. 年齢制限はありますか？</div><div class="fa">3歳以上ならOK。Jr.・U25のクラスもあります。</div></div>
+        </div>
+        <a href="#" class="faq-btn">見学を申し込む</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 活動レポート（外部向け投稿） ============ -->
+<section class="posts" id="posts">
+  <div class="inner">
+    <div class="posts-hd rv">
+      <div>
+        <div class="s-eye">
+          <div class="s-eye-bar"></div>
+          <span class="s-eye-t">Report</span>
+        </div>
+        <h2>活動<em>レポート</em></h2>
+      </div>
+      <a href="#" class="btn-line">すべての投稿を見る →</a>
+    </div>
+    <div class="posts-g rv">
+      <div class="post">
+        <div class="post-img"><span class="ph-lbl">Photo</span></div>
+        <div class="post-body">
+          <span class="post-date">2026.05.20</span>
+          <h4 class="post-title">春のワークショップを開催しました</h4>
+          <p class="post-ex">新メンバーも交えて、ゴスペルの基礎から楽しく学びました。</p>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-img"><span class="ph-lbl">Photo</span></div>
+        <div class="post-body">
+          <span class="post-date">2026.04.12</span>
+          <h4 class="post-title">地域イベントに出演しました</h4>
+          <p class="post-ex">たくさんの方に聴いていただき、ありがとうございました。</p>
+        </div>
+      </div>
+      <div class="post">
+        <div class="post-img"><span class="ph-lbl">Photo</span></div>
+        <div class="post-body">
+          <span class="post-date">2026.03.08</span>
+          <h4 class="post-title">新年度メンバー募集スタート！</h4>
+          <p class="post-ex">2026年度の新メンバーを募集しています。見学はいつでも歓迎です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="ft-g">
+    <div>
+      <div class="ft-brand">Voices of Vision</div>
+      <p class="ft-tag">名古屋を拠点に活動する<br>ゴスペルクワイア。since 1999</p>
+      <div class="ft-sns">
+        <a href="#" class="sn">f</a>
+        <a href="#" class="sn">ig</a>
+        <a href="#" class="sn">▶</a>
+        <a href="#" class="sn">L</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h5>Pages</h5>
+      <ul>
+        <li><a href="#">VOVについて</a></li>
+        <li><a href="#">活動・スケジュール</a></li>
+        <li><a href="#">入会案内</a></li>
+        <li><a href="#">ギャラリー・コンサート</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Info</h5>
+      <ul>
+        <li><a href="#">活動レポート</a></li>
+        <li><a href="#">VOVの歩み（年表）</a></li>
+        <li><a href="#">活動アーカイブ</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="#">イベント出演依頼</a></li>
+        <li><a href="#">見学・入会</a></li>
+        <li><a href="#">メディア取材</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-c">© 2026 Voices of Vision. All rights reserved.</span>
+    <span class="ft-c">vov.jp</span>
+  </div>
+</footer>
+
+<script>
+// スクロールアニメーション
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+// プレビュー用：リンク無効化
+document.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href && href.startsWith('#') && href.length > 1) {
+      e.preventDefault();
+      const t = document.querySelector(href);
+      if (t) t.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      e.preventDefault();
+    }
+  });
+});
+</script>
+</body>
+</html>
